@@ -1,429 +1,562 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>V4s Family Meetup</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>V4s Family Meetup</title>
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(160deg, #ffe3ef, #fff7fb, #f3e8ff);
-      color: #242124;
-      min-height: 100vh;
-    }
+<style>
+*{
+box-sizing:border-box;
+}
 
-    .app {
-      max-width: 520px;
-      margin: auto;
-      padding: 22px;
-    }
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:linear-gradient(160deg,#ffe3ef,#fff7fb,#f4e8ff);
+color:#242124;
+min-height:100vh;
+}
 
-    .hero {
-      text-align: center;
-      padding: 34px 20px;
-      border-radius: 32px;
-      background: rgba(255, 255, 255, 0.72);
-      box-shadow: 0 20px 50px rgba(180, 80, 120, 0.18);
-      backdrop-filter: blur(12px);
-      margin-top: 16px;
-    }
+.app{
+max-width:520px;
+margin:auto;
+padding:20px;
+}
 
-    .logo {
-      font-size: 56px;
-      animation: pulse 1.6s infinite;
-    }
+.hero{
+text-align:center;
+padding:35px 20px;
+border-radius:32px;
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(12px);
+box-shadow:0 18px 50px rgba(160,80,120,0.18);
+margin-top:14px;
+}
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.12); }
-    }
+.logo{
+font-size:60px;
+animation:pulse 1.7s infinite;
+}
 
-    h1 {
-      margin: 8px 0 4px;
-      font-size: 36px;
-    }
+@keyframes pulse{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.12);}
+}
 
-    h2 {
-      margin-top: 0;
-    }
+h1{
+margin:8px 0;
+font-size:38px;
+}
 
-    .subtitle {
-      color: #6f6470;
-      line-height: 1.5;
-      font-size: 16px;
-    }
+.subtitle{
+color:#6d6570;
+line-height:1.5;
+}
 
-    .card {
-      background: rgba(255, 255, 255, 0.82);
-      border-radius: 26px;
-      padding: 20px;
-      margin-top: 18px;
-      box-shadow: 0 16px 38px rgba(120, 60, 100, 0.12);
-      backdrop-filter: blur(12px);
-    }
+.card{
+background:rgba(255,255,255,0.82);
+padding:20px;
+border-radius:28px;
+margin-top:18px;
+backdrop-filter:blur(12px);
+box-shadow:0 15px 38px rgba(120,60,100,0.12);
+}
 
-    label {
-      display: block;
-      font-weight: 700;
-      margin-top: 12px;
-    }
+input,textarea,select{
+width:100%;
+padding:13px;
+margin-top:10px;
+border-radius:16px;
+border:1px solid #ead6e0;
+font-size:16px;
+background:white;
+}
 
-    input, textarea, select {
-      width: 100%;
-      margin-top: 8px;
-      border: 1px solid #ead4df;
-      border-radius: 16px;
-      padding: 13px;
-      font-size: 16px;
-      background: white;
-    }
+button,.button{
+border:none;
+padding:11px 14px;
+border-radius:15px;
+font-size:15px;
+font-weight:700;
+cursor:pointer;
+margin-top:10px;
+margin-right:6px;
+text-decoration:none;
+display:inline-block;
+}
 
-    .spot {
-      border: 1px solid #f0d6e3;
-      background: #fffafd;
-      border-radius: 22px;
-      padding: 16px;
-      margin-top: 14px;
-    }
+.primary{
+background:#d6336c;
+color:white;
+}
 
-    .spot h3 {
-      margin: 0 0 6px;
-      font-size: 20px;
-    }
+.dark{
+background:#242124;
+color:white;
+}
 
-    .tag {
-      display: inline-block;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: #ffe1ed;
-      color: #a31650;
-      font-size: 13px;
-      margin-bottom: 8px;
-      font-weight: 700;
-    }
+.soft{
+background:#fff0f6;
+color:#c22561;
+}
 
-    .votes {
-      font-weight: 800;
-      margin: 10px 0;
-    }
+.danger{
+background:#ffe3e3;
+color:#b42318;
+}
 
-    button, .button {
-      border: none;
-      border-radius: 15px;
-      padding: 11px 14px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      margin: 4px 4px 0 0;
-      text-decoration: none;
-      display: inline-block;
-    }
+.spot{
+background:#fffafd;
+border:1px solid #f0d6e3;
+padding:16px;
+border-radius:22px;
+margin-top:14px;
+}
 
-    .primary {
-      background: #d6336c;
-      color: white;
-    }
+.tag{
+display:inline-block;
+padding:5px 10px;
+border-radius:999px;
+background:#ffe1ed;
+color:#b61f5d;
+font-size:13px;
+font-weight:700;
+margin-bottom:8px;
+}
 
-    .dark {
-      background: #242124;
-      color: white;
-    }
+.votes{
+font-weight:800;
+margin:10px 0;
+}
 
-    .soft {
-      background: #fff0f6;
-      color: #b91d5a;
-    }
-
-    .danger {
-      background: #ffe3e3;
-      color: #a61e1e;
-    }
-
-    .note {
-      font-size: 14px;
-      color: #766b77;
-      line-height: 1.45;
-    }
-
-    .family-list {
-      padding-left: 18px;
-      line-height: 1.8;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 26px 0;
-      color: #7b707b;
-      font-size: 14px;
-    }
-
-    .small {
-      font-size: 13px;
-      color: #756a75;
-    }
-  </style>
+.footer{
+text-align:center;
+padding:30px 0;
+font-size:14px;
+color:#777;
+}
+</style>
 </head>
 
 <body>
-  <div class="app">
-    <section class="hero">
-      <div class="logo">💗</div>
-      <h1>V4s</h1>
-      <p class="subtitle">
-        A family meetup app to plan special days out in Melbourne with Mum.
-      </p>
-    </section>
 
-    <section class="card">
-      <h2>Plan the next family day</h2>
+<div class="app">
 
-      <label>Meetup date</label>
-      <input type="date" id="dateInput" />
+<section class="hero">
+<div class="logo">💗</div>
+<h1>V4s</h1>
+<p class="subtitle">
+Family meetup planner for special days together in Melbourne ❤️
+</p>
+</section>
 
-      <label>Meetup time</label>
-      <input type="time" id="timeInput" />
+<section class="card">
+<h2>Next Meetup Plan</h2>
 
-      <label>Plan note</label>
-      <textarea id="planNote" rows="3" placeholder="Example: Lunch with Mum, coffee, walk, photos..."></textarea>
+<input type="date" id="dateInput"/>
+<input type="time" id="timeInput"/>
 
-      <button class="primary" onclick="savePlan()">Save plan</button>
-      <p class="note" id="savedPlan">No plan saved yet.</p>
-    </section>
+<textarea id="planNote" rows="3" placeholder="Lunch, coffee, walk, family photos..."></textarea>
 
-    <section class="card">
-      <h2>Melbourne hangout ideas</h2>
-      <p class="subtitle">Vote for the place you like most.</p>
-      <div id="spots"></div>
-    </section>
+<button class="primary" onclick="savePlan()">Save Meetup</button>
 
-    <section class="card">
-      <h2>Add a new place</h2>
-      <input id="placeName" placeholder="Place name" />
-      <textarea id="placeNote" rows="3" placeholder="Why should the family go here?"></textarea>
-      <select id="placeType">
-        <option>Lunch</option>
-        <option>Coffee</option>
-        <option>Walk</option>
-        <option>Shopping</option>
-        <option>Beach</option>
-        <option>Family activity</option>
-      </select>
-      <button class="primary" onclick="addPlace()">Add place</button>
-      <p class="small">This version saves on each phone. Later we can make it shared live for everyone.</p>
-    </section>
+<p id="savedPlan"></p>
+</section>
 
-    <section class="card">
-      <h2>Family members</h2>
-      <p class="subtitle">People this app is for:</p>
-      <ul class="family-list" id="familyList"></ul>
+<section class="card">
+<h2>Melbourne Meetup Ideas</h2>
 
-      <input id="familyName" placeholder="Add family member name" />
-      <button class="soft" onclick="addFamily()">Add family member</button>
-    </section>
+<div id="spots"></div>
+</section>
 
-    <section class="card">
-      <h2>Share V4s</h2>
-      <p class="subtitle">Send this app to the family group so everyone can open it.</p>
-      <button class="dark" onclick="shareApp()">Share app</button>
-    </section>
+<section class="card">
+<h2>Add New Place</h2>
 
-    <div class="footer">
-      Made with love for Mother’s Day ❤️
-    </div>
-  </div>
+<input id="placeName" placeholder="Place name"/>
 
-  <script>
-    let spots = JSON.parse(localStorage.getItem("v4s-spots")) || [
-      {
-        name: "Royal Botanic Gardens",
-        type: "Walk",
-        note: "Peaceful walk, picnic, photos and fresh air with Mum.",
-        map: "https://www.google.com/maps/search/Royal+Botanic+Gardens+Melbourne",
-        votes: 0
-      },
-      {
-        name: "Southbank",
-        type: "Dinner",
-        note: "River views, restaurants, dessert and a relaxed city walk.",
-        map: "https://www.google.com/maps/search/Southbank+Melbourne",
-        votes: 0
-      },
-      {
-        name: "Chadstone Shopping Centre",
-        type: "Shopping",
-        note: "Easy indoor meetup with food, shopping and coffee options.",
-        map: "https://www.google.com/maps/search/Chadstone+Shopping+Centre",
-        votes: 0
-      },
-      {
-        name: "St Kilda Beach",
-        type: "Beach",
-        note: "Beach walk, sunset, snacks and a calm family outing.",
-        map: "https://www.google.com/maps/search/St+Kilda+Beach+Melbourne",
-        votes: 0
-      },
-      {
-        name: "Docklands",
-        type: "Family activity",
-        note: "Good for food, walking, city views and family photos.",
-        map: "https://www.google.com/maps/search/Docklands+Melbourne",
-        votes: 0
-      }
-    ];
+<textarea id="placeNote" rows="3" placeholder="Why should we go here?"></textarea>
 
-    let family = JSON.parse(localStorage.getItem("v4s-family")) || [
-      "Mum",
-      "Sisters",
-      "Brother",
-      "Family"
-    ];
+<select id="placeType">
+<option>Lunch</option>
+<option>Coffee</option>
+<option>Walk</option>
+<option>Shopping</option>
+<option>Beach</option>
+<option>Family Activity</option>
+</select>
 
-    function saveAll() {
-      localStorage.setItem("v4s-spots", JSON.stringify(spots));
-      localStorage.setItem("v4s-family", JSON.stringify(family));
-    }
+<button class="primary" onclick="addPlace()">Add Place</button>
+</section>
 
-    function renderSpots() {
-      const box = document.getElementById("spots");
-      box.innerHTML = "";
+<section class="card">
+<h2>Search Melbourne Locations</h2>
 
-      spots
-        .sort((a, b) => b.votes - a.votes)
-        .forEach((spot, index) => {
-          box.innerHTML += `
-            <div class="spot">
-              <span class="tag">${spot.type}</span>
-              <h3>${spot.name}</h3>
-              <p>${spot.note}</p>
-              <div class="votes">Votes: ${spot.votes}</div>
-              <button class="primary" onclick="vote('${spot.name}')">Vote</button>
-              <a class="button dark" href="${spot.map}" target="_blank">Open Maps</a>
-              <button class="danger" onclick="removePlace('${spot.name}')">Remove</button>
-            </div>
-          `;
-        });
-    }
+<input id="locationSearch" placeholder="Search Melbourne location"/>
 
-    function vote(name) {
-      const spot = spots.find(s => s.name === name);
-      if (spot) {
-        spot.votes++;
-        saveAll();
-        renderSpots();
-      }
-    }
+<button class="primary" onclick="searchLocation()">Search Maps</button>
 
-    function addPlace() {
-      const name = document.getElementById("placeName").value.trim();
-      const note = document.getElementById("placeNote").value.trim();
-      const type = document.getElementById("placeType").value;
+<div id="locationResults"></div>
+</section>
 
-      if (!name) {
-        alert("Please enter a place name.");
-        return;
-      }
+<section class="card">
+<h2>Family Chat</h2>
 
-      spots.push({
-        name,
-        type,
-        note: note || "Family suggested meetup place.",
-        map: "https://www.google.com/maps/search/" + encodeURIComponent(name + " Melbourne"),
-        votes: 0
-      });
+<input id="chatName" placeholder="Your name"/>
 
-      document.getElementById("placeName").value = "";
-      document.getElementById("placeNote").value = "";
+<textarea id="chatMessage" rows="3" placeholder="Write a family message..."></textarea>
 
-      saveAll();
-      renderSpots();
-    }
+<button class="primary" onclick="sendMessage()">Send Message</button>
 
-    function removePlace(name) {
-      spots = spots.filter(s => s.name !== name);
-      saveAll();
-      renderSpots();
-    }
+<div id="chatBox"></div>
+</section>
 
-    function savePlan() {
-      const date = document.getElementById("dateInput").value;
-      const time = document.getElementById("timeInput").value;
-      const note = document.getElementById("planNote").value.trim();
+<section class="card">
+<h2>Family Members</h2>
 
-      const plan = { date, time, note };
-      localStorage.setItem("v4s-plan", JSON.stringify(plan));
-      renderPlan();
-    }
+<ul id="familyList"></ul>
 
-    function renderPlan() {
-      const plan = JSON.parse(localStorage.getItem("v4s-plan"));
-      const saved = document.getElementById("savedPlan");
+<input id="familyName" placeholder="Add family member"/>
 
-      if (!plan || (!plan.date && !plan.time && !plan.note)) {
-        saved.innerText = "No plan saved yet.";
-        return;
-      }
+<button class="soft" onclick="addFamily()">Add Member</button>
+</section>
 
-      saved.innerText =
-        "Saved plan: " +
-        (plan.date || "No date") +
-        " at " +
-        (plan.time || "No time") +
-        ". " +
-        (plan.note || "");
-    }
+<section class="card">
+<h2>Share V4s</h2>
 
-    function renderFamily() {
-      const list = document.getElementById("familyList");
-      list.innerHTML = "";
+<button class="dark" onclick="shareApp()">Share App</button>
+</section>
 
-      family.forEach((name, index) => {
-        list.innerHTML += `
-          <li>${name} <button class="danger" onclick="removeFamily(${index})">x</button></li>
-        `;
-      });
-    }
+<div class="footer">
+Made with love for Mother’s Day ❤️
+</div>
 
-    function addFamily() {
-      const name = document.getElementById("familyName").value.trim();
+</div>
 
-      if (!name) {
-        alert("Please enter a name.");
-        return;
-      }
+<script>
 
-      family.push(name);
-      document.getElementById("familyName").value = "";
-      saveAll();
-      renderFamily();
-    }
+let spots = JSON.parse(localStorage.getItem("v4s-spots")) || [
+{
+name:"Royal Botanic Gardens",
+type:"Walk",
+note:"Peaceful picnic and walk with Mum.",
+map:"https://www.google.com/maps/search/Royal+Botanic+Gardens+Melbourne",
+votes:0
+},
+{
+name:"Southbank",
+type:"Dinner",
+note:"Food, desserts and river views.",
+map:"https://www.google.com/maps/search/Southbank+Melbourne",
+votes:0
+},
+{
+name:"St Kilda Beach",
+type:"Beach",
+note:"Relaxing sunset family outing.",
+map:"https://www.google.com/maps/search/St+Kilda+Beach+Melbourne",
+votes:0
+}
+];
 
-    function removeFamily(index) {
-      family.splice(index, 1);
-      saveAll();
-      renderFamily();
-    }
+let family = JSON.parse(localStorage.getItem("v4s-family")) || [
+"Mum",
+"Sisters",
+"Brother"
+];
 
-    function shareApp() {
-      if (navigator.share) {
-        navigator.share({
-          title: "V4s Family Meetup",
-          text: "Let’s choose a Melbourne family meetup for Mum ❤️",
-          url: window.location.href
-        });
-      } else {
-        alert("Copy this link and send it to family: " + window.location.href);
-      }
-    }
+let chatMessages = JSON.parse(localStorage.getItem("v4s-chat")) || [];
 
-    renderSpots();
-    renderFamily();
-    renderPlan();
-  </script>
+function saveAll(){
+localStorage.setItem("v4s-spots",JSON.stringify(spots));
+localStorage.setItem("v4s-family",JSON.stringify(family));
+localStorage.setItem("v4s-chat",JSON.stringify(chatMessages));
+}
+
+function renderSpots(){
+
+const box=document.getElementById("spots");
+
+box.innerHTML="";
+
+spots.sort((a,b)=>b.votes-a.votes);
+
+spots.forEach((spot,index)=>{
+
+box.innerHTML += `
+<div class="spot">
+
+<span class="tag">${spot.type}</span>
+
+<h3>${spot.name}</h3>
+
+<p>${spot.note}</p>
+
+<div class="votes">
+Votes: ${spot.votes}
+</div>
+
+<button class="primary" onclick="vote(${index})">
+Vote
+</button>
+
+<a class="button dark" href="${spot.map}" target="_blank">
+Open Maps
+</a>
+
+<button class="danger" onclick="removePlace(${index})">
+Remove
+</button>
+
+</div>
+`;
+
+});
+
+}
+
+function vote(index){
+spots[index].votes++;
+saveAll();
+renderSpots();
+}
+
+function addPlace(){
+
+const name=document.getElementById("placeName").value.trim();
+const note=document.getElementById("placeNote").value.trim();
+const type=document.getElementById("placeType").value;
+
+if(!name){
+alert("Please enter a place.");
+return;
+}
+
+spots.push({
+name,
+type,
+note:note || "Family meetup suggestion.",
+map:"https://www.google.com/maps/search/" + encodeURIComponent(name + " Melbourne"),
+votes:0
+});
+
+saveAll();
+
+document.getElementById("placeName").value="";
+document.getElementById("placeNote").value="";
+
+renderSpots();
+}
+
+function removePlace(index){
+spots.splice(index,1);
+saveAll();
+renderSpots();
+}
+
+function savePlan(){
+
+const date=document.getElementById("dateInput").value;
+const time=document.getElementById("timeInput").value;
+const note=document.getElementById("planNote").value;
+
+localStorage.setItem("v4s-plan",JSON.stringify({
+date,
+time,
+note
+}));
+
+renderPlan();
+}
+
+function renderPlan(){
+
+const plan=JSON.parse(localStorage.getItem("v4s-plan"));
+
+if(!plan){
+return;
+}
+
+document.getElementById("savedPlan").innerHTML =
+"<strong>Saved:</strong> " +
+(plan.date || "") +
+" " +
+(plan.time || "") +
+"<br>" +
+(plan.note || "");
+}
+
+function searchLocation(){
+
+const query=document.getElementById("locationSearch").value.trim();
+
+if(!query){
+alert("Please search a location.");
+return;
+}
+
+const mapsUrl =
+"https://www.google.com/maps/search/" +
+encodeURIComponent(query + " Melbourne");
+
+document.getElementById("locationResults").innerHTML = `
+<div class="spot">
+
+<h3>${query}</h3>
+
+<p>Open this place in Google Maps.</p>
+
+<a class="button dark" href="${mapsUrl}" target="_blank">
+Open Maps
+</a>
+
+<button class="primary" onclick="addSearchedPlace('${query}')">
+Add To Meetup Ideas
+</button>
+
+</div>
+`;
+}
+
+function addSearchedPlace(name){
+
+spots.push({
+name,
+type:"Family Suggestion",
+note:"Added from search.",
+map:"https://www.google.com/maps/search/" + encodeURIComponent(name + " Melbourne"),
+votes:0
+});
+
+saveAll();
+renderSpots();
+
+alert(name + " added ❤️");
+}
+
+function renderFamily(){
+
+const list=document.getElementById("familyList");
+
+list.innerHTML="";
+
+family.forEach((member,index)=>{
+
+list.innerHTML += `
+<li style="margin-bottom:10px;">
+${member}
+
+<button class="danger" onclick="removeFamily(${index})">
+x
+</button>
+</li>
+`;
+
+});
+
+}
+
+function addFamily(){
+
+const name=document.getElementById("familyName").value.trim();
+
+if(!name){
+alert("Please enter name.");
+return;
+}
+
+family.push(name);
+
+document.getElementById("familyName").value="";
+
+saveAll();
+
+renderFamily();
+}
+
+function removeFamily(index){
+
+family.splice(index,1);
+
+saveAll();
+
+renderFamily();
+}
+
+function renderChat(){
+
+const box=document.getElementById("chatBox");
+
+box.innerHTML="";
+
+chatMessages.slice().reverse().forEach(msg=>{
+
+box.innerHTML += `
+<div class="spot">
+
+<strong>${msg.name}</strong>
+
+<p>${msg.text}</p>
+
+<small style="color:#777;">
+${msg.time}
+</small>
+
+</div>
+`;
+
+});
+
+}
+
+function sendMessage(){
+
+const name=document.getElementById("chatName").value.trim();
+const text=document.getElementById("chatMessage").value.trim();
+
+if(!name || !text){
+alert("Please enter name and message.");
+return;
+}
+
+chatMessages.push({
+name,
+text,
+time:new Date().toLocaleString()
+});
+
+saveAll();
+
+document.getElementById("chatMessage").value="";
+
+renderChat();
+}
+
+function shareApp(){
+
+if(navigator.share){
+
+navigator.share({
+title:"V4s Family Meetup",
+text:"Join our family meetup planner ❤️",
+url:window.location.href
+});
+
+}else{
+
+alert(window.location.href);
+
+}
+
+}
+
+renderSpots();
+renderFamily();
+renderChat();
+renderPlan();
+
+</script>
+
 </body>
 </html>
